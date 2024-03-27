@@ -25,14 +25,12 @@ class VacationPayServiceImplTest {
 
     @BeforeEach
     void setUp() {
-
         inputVacationPayDTO = InputVacationPayDTO.builder()
                 .averageSalary(100000.0)
                 .vacationStart(LocalDate.of(2024, Month.MARCH, 19))
                 .vacationEnd(LocalDate.of(2024, Month.APRIL, 19))
                 .vacationDays(32)
                 .build();
-
     }
 
     @Test
