@@ -51,6 +51,7 @@ class VacationPayServiceImplTest {
     void calculateWithoutDates() throws Exception {
         double expectedVacationPay = 109215.02;
 
+
         mockMvc.perform(MockMvcRequestBuilders.get("/calculate")
                         .param("averageSalary", String.valueOf(inputVacationPayDTO.getAverageSalary()))
                         .param("vacationDays", String.valueOf(inputVacationPayDTO.getVacationDays())))
