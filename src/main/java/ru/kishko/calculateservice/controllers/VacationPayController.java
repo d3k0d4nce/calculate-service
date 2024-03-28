@@ -17,16 +17,9 @@ public class VacationPayController {
     @GetMapping("/calculate")
     public ResponseEntity<Double> calculate(@Valid InputVacationPayDTO inputVacationPayDTO) {
         if (inputVacationPayDTO.getVacationDays() != null) {
-            return ResponseEntity.ok(vacationPayService.calculateByDays(
-                    inputVacationPayDTO.getAverageSalary(),
-                    inputVacationPayDTO.getVacationDays()
-            ));
+            return ResponseEntity.ok(vacationPayService.calculateByDays(inputVacationPayDTO));
         } else if (inputVacationPayDTO.getVacationStart() != null && inputVacationPayDTO.getVacationEnd() != null) {
-            return ResponseEntity.ok(vacationPayService.calculateByDates(
-                    inputVacationPayDTO.getAverageSalary(),
-                    inputVacationPayDTO.getVacationStart(),
-                    inputVacationPayDTO.getVacationEnd()
-            ));
+            return ResponseEntity.ok(vacationPayService.calculateByDates(inputVacationPayDTO));
         }
         throw new InputException("There are some problems with DTO format: " + inputVacationPayDTO);
     }

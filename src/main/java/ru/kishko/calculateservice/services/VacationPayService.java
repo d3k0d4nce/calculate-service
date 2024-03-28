@@ -1,10 +1,12 @@
 package ru.kishko.calculateservice.services;
 
+import ru.kishko.calculateservice.dtos.input.InputVacationPayDTO;
+
 import java.time.LocalDate;
 
 public interface VacationPayService {
 
-    Double calculateByDays(Double averageSalary, Integer numberOfDays);
+    Double calculateByDays(InputVacationPayDTO inputVacationPayDTO);
 
-    Double calculateByDates(Double averageSalary, LocalDate vacationStart, LocalDate vacationEnd);
+    Double calculateByDates(InputVacationPayDTO inputVacationPayDTO);
 }
